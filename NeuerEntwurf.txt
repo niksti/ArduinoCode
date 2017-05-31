@@ -1,0 +1,1493 @@
+//**********************************************************************************
+ 
+//  Copyright  Gaetano  Fresa
+ 
+//  Code  by  Gaetano  Fresa  -  gaetano.fresa@googlemail.com
+ 
+//  **********************************************************************************
+ 
+//  License
+ 
+//  **********************************************************************************
+ 
+//  This  program  is  free  software;  you  can  redistribute  it  
+ 
+//  and/or  modify  it  under  the  terms  of  the  GNU  General     
+ 
+//  Public  License  as  published  by  the  Free  Software        
+ 
+//  Foundation;  either  version  3  of  the  License,  or         
+ 
+//  (at  your  option)  any  later  version.                     
+ 
+//                                                         
+ 
+//  This  program  is  distributed  in  the  hope  that  it  will    
+ 
+//  be  useful,  but  WITHOUT  ANY  WARRANTY;  without  even  the   
+ 
+//  implied  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A    
+ 
+//  PARTICULAR  PURPOSE.  See  the  GNU  General  Public         
+ 
+//  License  for  more  details.                               
+ 
+//                                                         
+ 
+//  You  should  have  received  a  copy  of  the  GNU  General     
+ 
+//  Public  License  along  with  this  program.
+ 
+//  If  not,  see  <http://www.gnu.org/licenses></http:>.
+ 
+//                                                         
+ 
+//  Licence  can  be  viewed  at                                
+ 
+//  http://www.gnu.org/licenses/gpl-3.0.txt
+ 
+//
+ 
+//  Please  maintain  this  license  information  along  with  authorship
+ 
+//  and  copyright  notices  in  any  redistribution  of  this  code
+ 
+//  **********************************************************************************/
+ 
+ 
+ 
+//#define  DEBUG
+#include  <OneWire.h>
+ 
+#include  <DallasTemperature.h>
+ 
+#include  <stdlib.h>
+ 
+#define  ONE_WIRE_BUS_PIN  5
+ 
+ 
+ 
+ 
+ 
+OneWire  oneWire(ONE_WIRE_BUS_PIN);
+ 
+ 
+ 
+ 
+ 
+DallasTemperature  sensors(&oneWire);
+ 
+float  tempC1,  tempC2,  tempC3,  tempC4,  tempC5,  tempC6,  tempC7,  tempC8,  tempC9,  tempC10,  tempC11,  tempC12,  tempC13,  tempC14,  tempC15,  tempC16,  
+tempC17,  tempC18,  tempC19,  tempC20,  tempC21,  tempC22,  tempC23,  tempC24,tempC25,  tempC26,  tempC27,  tempC28,  tempC29,  tempC30,  tempC31,  tempC32,  
+tempC33,  tempC34,  tempC35,  tempC36,tempC37,  tempC38,  tempC39,  tempC40,  tempC41,  tempC42,  tempC43,  tempC44,  tempC45,  tempC46,  tempC47,  tempC48, 
+tempC49,  tempC50,  tempC51,  tempC52,  tempC53,  tempC54,  tempC55,  tempC56,  tempC57,  tempC58,  tempC59,  tempC60;
+ 
+//Dallas  Sensoradressen
+ 
+String  temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8,temp9,temp10,temp11,temp12,temp13,temp14,temp15,temp16,temp17,temp18,temp19,temp20,temp21,temp22,temp23,
+temp24,temp25,temp26,temp27,temp28,temp29,temp30,temp31,temp32,temp33,temp34,temp35,temp36,temp37,temp38,temp39,temp40,temp41,temp42,temp43,temp44,temp45,
+temp46,temp47,temp148,temp149,temp50,temp51,temp52,temp53,temp54,temp55,temp56,temp57,temp58,temp59,temp60;
+ 
+char  buffer1[10],buffer2[10],buffer3[10],buffer4[10],buffer5[10],buffer6[10],buffer7[10],buffer8[10],buffer9[10],buffer10[10],buffer11[10],buffer12[10],buffer13[10],
+ buffe14[10],buffer15[10],buffer16[10],buffer17[10],buffer18[10],buffer19[10],
+ buffer20[10],buffer21[10],buffer22[10],buffer23[10],buffer24[10],buffer25[10],buffer26[10],buffer27[10],buffer28[10],buffer29[10],buffer30[10],buffer31[10],
+ buffer32[10],buffer33[10],buffer34[10],buffer35[10],buffe36[10],buffer37[10],buffer38[10],buffer39[10],buffer40[10],buffer41[10],buffer42[10],buffer43[10],
+ buffer44[10],buffer45[10],buffer46[10],buffer47[10],buffer48[10],buffer49[10],buffer50[10],buffer51[10],buffer52[10],buffer53[10],buffer54[10],buffer55[10],
+ buffer56[10],buffer57[10],buffer58[10],buffer59[10],buffer60[10];
+ 
+ 
+ 
+DeviceAddress  Probe01  =  {};  
+ 
+DeviceAddress  Probe02  =  {};
+ 
+DeviceAddress  Probe03  =  {};
+ 
+DeviceAddress  Probe04  =  {};
+ 
+DeviceAddress  Probe05  =  {};
+ 
+DeviceAddress  Probe06  =  {};
+ 
+DeviceAddress  Probe07  =  {};
+ 
+DeviceAddress  Probe08  =  {};
+ 
+DeviceAddress  Probe09  =  {};
+ 
+DeviceAddress  Probe10  =  {};
+ 
+DeviceAddress  Probe11  =  {};  
+ 
+DeviceAddress  Probe12  =  {};
+ 
+DeviceAddress  Probe13  =  {};
+ 
+DeviceAddress  Probe14  =  {};  
+ 
+DeviceAddress  Probe15  =  {};
+ 
+DeviceAddress  Probe16  =  {};
+ 
+DeviceAddress  Probe17  =  {};
+ 
+DeviceAddress  Probe18  =  {};
+ 
+DeviceAddress  Probe19  =  {};
+ 
+DeviceAddress  Probe20  =  {};
+ 
+DeviceAddress  Probe21  =  {};
+ 
+DeviceAddress  Probe22  =  {};
+ 
+DeviceAddress  Probe23  =  {};
+ 
+DeviceAddress  Probe24  =  {};  
+ 
+DeviceAddress  Probe25  =  {};
+ 
+DeviceAddress  Probe26  =  {};
+DeviceAddress  Probe27  =  {};  
+ 
+DeviceAddress  Probe28  =  {};
+ 
+DeviceAddress  Probe29  =  {};
+ 
+DeviceAddress  Probe30  =  {};
+ 
+DeviceAddress  Probe31  =  {};
+ 
+DeviceAddress  Probe32  =  {};
+ 
+DeviceAddress  Probe33  =  {};
+
+DeviceAddress  Probe34  =  {};
+ 
+DeviceAddress  Probe35  =  {};
+ 
+DeviceAddress  Probe36  =  {};
+ 
+DeviceAddress  Probe37  =  {};  
+ 
+DeviceAddress  Probe38  =  {};
+ 
+DeviceAddress  Probe39  =  {};
+
+DeviceAddress  Probe40  =  {};  
+ 
+DeviceAddress  Probe41  =  {};
+ 
+DeviceAddress  Probe42  =  {};
+ 
+DeviceAddress  Probe43  =  {};
+ 
+DeviceAddress  Probe44  =  {};
+ 
+DeviceAddress  Probe45  =  {};
+ 
+DeviceAddress  Probe46  =  {};
+ 
+DeviceAddress  Probe47  =  {};
+ 
+DeviceAddress  Probe48  =  {};
+ 
+DeviceAddress  Probe49  =  {};
+ 
+DeviceAddress  Probe50  =  {};  
+ 
+DeviceAddress  Probe51  =  {};
+ 
+DeviceAddress  Probe52  =  {};
+
+DeviceAddress  Probe53  =  {};  
+ 
+DeviceAddress  Probe54  =  {};
+ 
+DeviceAddress  Probe55  =  {};
+ 
+DeviceAddress  Probe56  =  {};
+ 
+DeviceAddress  Probe57  =  {};
+ 
+DeviceAddress  Probe58  =  {};
+ 
+DeviceAddress  Probe59  =  {};
+ 
+DeviceAddress  Probe60  =  {};
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+void  setup()    
+ 
+{
+ 
+  //  start  serial  port  to  show  results
+ 
+  Serial.begin(9600);
+ 
+ //  Serial.print("Initializing  Temperature  Control  Library  Version  ");
+ 
+  
+ 
+   
+ 
+   
+ 
+  sensors.begin();
+ 
+   
+ 
+  //  set  the  resolution  to  10  bit  (Can  be  9  to  12  bits  ..  lower  is  faster)
+ 
+  sensors.setResolution(Probe01,  12);
+ 
+  sensors.setResolution(Probe02,  12);
+ 
+  sensors.setResolution(Probe03,  12);
+ 
+  sensors.setResolution(Probe04,  12);
+ 
+  sensors.setResolution(Probe05,  12);
+ 
+  sensors.setResolution(Probe06,  12);
+ 
+  sensors.setResolution(Probe07,  12);
+ 
+  sensors.setResolution(Probe08,  12);
+ 
+  sensors.setResolution(Probe09,  12);
+ 
+  sensors.setResolution(Probe10,  12);
+ 
+  sensors.setResolution(Probe11,  12);
+ 
+  sensors.setResolution(Probe12,  12);
+   
+  sensors.setResolution(Probe13,  12);
+
+    sensors.setResolution(Probe14,  12);
+ 
+  sensors.setResolution(Probe15,  12);
+ 
+  sensors.setResolution(Probe16,  12);
+ 
+  sensors.setResolution(Probe17,  12);
+ 
+  sensors.setResolution(Probe18,  12);
+ 
+  sensors.setResolution(Probe19,  12);
+ 
+  sensors.setResolution(Probe20,  12);
+ 
+  sensors.setResolution(Probe21,  12);
+ 
+  sensors.setResolution(Probe22,  12);
+ 
+  sensors.setResolution(Probe23,  12);
+ 
+  sensors.setResolution(Probe24,  12);
+ 
+  sensors.setResolution(Probe25,  12);
+   
+  sensors.setResolution(Probe26,  12);
+
+  sensors.setResolution(Probe27,  12);
+ 
+  sensors.setResolution(Probe28,  12);
+ 
+  sensors.setResolution(Probe29,  12);
+ 
+  sensors.setResolution(Probe30,  12);
+ 
+  sensors.setResolution(Probe31,  12);
+ 
+  sensors.setResolution(Probe32,  12);
+ 
+  sensors.setResolution(Probe33,  12);
+ 
+  sensors.setResolution(Probe34,  12);
+ 
+  sensors.setResolution(Probe35,  12);
+ 
+  sensors.setResolution(Probe36,  12);
+ 
+  sensors.setResolution(Probe37,  12);
+ 
+  sensors.setResolution(Probe38,  12);
+   
+  sensors.setResolution(Probe39,  12);
+
+  sensors.setResolution(Probe40,  12);
+ 
+  sensors.setResolution(Probe41,  12);
+ 
+  sensors.setResolution(Probe42,  12);
+ 
+  sensors.setResolution(Probe43,  12);
+ 
+  sensors.setResolution(Probe44,  12);
+ 
+  sensors.setResolution(Probe45,  12);
+ 
+  sensors.setResolution(Probe46,  12);
+ 
+  sensors.setResolution(Probe47,  12);
+ 
+  sensors.setResolution(Probe48,  12);
+ 
+  sensors.setResolution(Probe49,  12);
+ 
+  sensors.setResolution(Probe50,  12);
+ 
+  sensors.setResolution(Probe51,  12);
+   
+  sensors.setResolution(Probe52,  12);
+
+  sensors.setResolution(Probe53,  12);
+ 
+  sensors.setResolution(Probe54,  12);
+ 
+  sensors.setResolution(Probe55,  12);
+ 
+  sensors.setResolution(Probe56,  12);
+ 
+  sensors.setResolution(Probe57,  12);
+ 
+  sensors.setResolution(Probe58,  12);
+ 
+  sensors.setResolution(Probe59,  12);
+ 
+  sensors.setResolution(Probe60,  12); 
+ 
+ 
+ 
+ 
+}
+ 
+ 
+ 
+ 
+void  loop()   
+ 
+{
+    #ifdef  DEBUG
+  delay(5000);
+ 
+  Serial.println();   
+ 
+  Serial.print("Getting  temperatures...  ");   
+ 
+  Serial.println();    
+    #endif
+   
+ 
+  //  Command  all  devices  on  bus  to  read  temperature   
+ 
+  sensors.requestTemperatures();   
+ 
+  //print  Temperatures
+ 
+   
+    #ifdef  DEBUG
+  Serial.print("Probe  01  temperature  is:    ");
+    #endif
+  tempC1  =  sensors.getTempC(Probe01);
+    #ifdef  DEBUG
+  Serial.println(tempC1);
+ 
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  02  temperature  is:    ");
+    #endif
+  tempC2  =  sensors.getTempC(Probe02);
+    #ifdef  DEBUG
+  Serial.println(tempC2);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  03  temperature  is:    ");
+    #endif
+  tempC3  =  sensors.getTempC(Probe03);
+    #ifdef  DEBUG
+  Serial.println(tempC3);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  04  temperature  is:    ");
+    #endif
+  tempC4  =  sensors.getTempC(Probe04);
+    #ifdef  DEBUG
+  Serial.println(tempC4);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  05  temperature  is:    ");
+    #endif
+  tempC5  =  sensors.getTempC(Probe05);
+    #ifdef  DEBUG
+  Serial.println(tempC5);
+  Serial.println();
+    #endif
+ 
+ //  sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  06  temperature  is:    ");
+    #endif
+  tempC6  =  sensors.getTempC(Probe06);
+    #ifdef  DEBUG
+  Serial.println(tempC6);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  07  temperature  is:    ");
+    #endif
+  tempC7  =  sensors.getTempC(Probe07);
+    #ifdef  DEBUG
+  Serial.println(tempC7);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  08  temperature  is:    ");
+    #endif
+  tempC8  =  sensors.getTempC(Probe08);
+    #ifdef  DEBUG
+  Serial.println(tempC8);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  09  temperature  is:    ");
+    #endif
+  tempC9  =  sensors.getTempC(Probe09);
+    #ifdef  DEBUG
+  Serial.println(tempC9);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  10  temperature  is:    ");
+    #endif
+  tempC10  =  sensors.getTempC(Probe10);
+    #ifdef  DEBUG
+  Serial.println(tempC10);
+  Serial.println();
+    #endif
+ 
+  //sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  11  temperature  is:    ");
+    #endif
+  tempC11  =  sensors.getTempC(Probe11);
+    #ifdef  DEBUG
+  Serial.println(tempC11);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  12  temperature  is:    ");
+    #endif
+  tempC12  =  sensors.getTempC(Probe12);
+    #ifdef  DEBUG
+  Serial.println(tempC12);
+  Serial.println();
+    #endif
+ 
+        #ifdef  DEBUG
+   Serial.print("Probe  13  temperature  is:    ");
+       #endif
+    tempC13=sensors.getTempC(Probe13);
+        #ifdef  DEBUG
+   Serial.println(tempC13);
+   Serial.println();
+         #endif
+
+    #ifdef  DEBUG
+  Serial.print("Probe  14  temperature  is:    ");
+    #endif
+  tempC14  =  sensors.getTempC(Probe14);
+    #ifdef  DEBUG
+  Serial.println(tempC14);
+ 
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  15  temperature  is:    ");
+    #endif
+  tempC15  =  sensors.getTempC(Probe15);
+    #ifdef  DEBUG
+  Serial.println(tempC15);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  16  temperature  is:    ");
+    #endif
+  tempC16  =  sensors.getTempC(Probe16);
+    #ifdef  DEBUG
+  Serial.println(tempC16);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  17  temperature  is:    ");
+    #endif
+  tempC17  =  sensors.getTempC(Probe17);
+    #ifdef  DEBUG
+  Serial.println(tempC17);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  18  temperature  is:    ");
+    #endif
+  tempC18  =  sensors.getTempC(Probe18);
+    #ifdef  DEBUG
+  Serial.println(tempC18);
+  Serial.println();
+    #endif
+ 
+ //  sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  19  temperature  is:    ");
+    #endif
+  tempC19  =  sensors.getTempC(Probe19);
+    #ifdef  DEBUG
+  Serial.println(tempC19);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  20  temperature  is:    ");
+    #endif
+  tempC20  =  sensors.getTempC(Probe20);
+    #ifdef  DEBUG
+  Serial.println(tempC20);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  21  temperature  is:    ");
+    #endif
+  tempC21  =  sensors.getTempC(Probe21);
+    #ifdef  DEBUG
+  Serial.println(tempC21);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  22  temperature  is:    ");
+    #endif
+  tempC22  =  sensors.getTempC(Probe22);
+    #ifdef  DEBUG
+  Serial.println(tempC22);
+  Serial.println();
+    #endif
+ 
+  //sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  23  temperature  is:    ");
+    #endif
+  tempC23  =  sensors.getTempC(Probe23);
+    #ifdef  DEBUG
+  Serial.println(tempC23);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  24  temperature  is:    ");
+    #endif
+  tempC24  =  sensors.getTempC(Probe24);
+    #ifdef  DEBUG
+  Serial.println(tempC24);
+  Serial.println();
+    #endif
+ 
+        #ifdef  DEBUG
+   Serial.print("Probe  25  temperature  is:    ");
+       #endif
+    tempC25=sensors.getTempC(Probe25);
+        #ifdef  DEBUG
+   Serial.println(tempC25);
+   Serial.println();
+         #endif
+
+    #ifdef  DEBUG
+  Serial.print("Probe  26  temperature  is:    ");
+    #endif
+  tempC26  =  sensors.getTempC(Probe26);
+    #ifdef  DEBUG
+  Serial.println(tempC26);
+ 
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  27  temperature  is:    ");
+    #endif
+  tempC27  =  sensors.getTempC(Probe27);
+    #ifdef  DEBUG
+  Serial.println(tempC27);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  28  temperature  is:    ");
+    #endif
+  tempC28  =  sensors.getTempC(Probe28);
+    #ifdef  DEBUG
+  Serial.println(tempC28);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  29  temperature  is:    ");
+    #endif
+  tempC29  =  sensors.getTempC(Probe29);
+    #ifdef  DEBUG
+  Serial.println(tempC29);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  30  temperature  is:    ");
+    #endif
+  tempC30  =  sensors.getTempC(Probe30);
+    #ifdef  DEBUG
+  Serial.println(tempC30);
+  Serial.println();
+    #endif
+ 
+ //  sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  31  temperature  is:    ");
+    #endif
+  tempC31  =  sensors.getTempC(Probe31);
+    #ifdef  DEBUG
+  Serial.println(tempC31);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  32  temperature  is:    ");
+    #endif
+  tempC32  =  sensors.getTempC(Probe32);
+    #ifdef  DEBUG
+  Serial.println(tempC32);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  33  temperature  is:    ");
+    #endif
+  tempC33  =  sensors.getTempC(Probe33);
+    #ifdef  DEBUG
+  Serial.println(tempC33);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  34  temperature  is:    ");
+    #endif
+  tempC34  =  sensors.getTempC(Probe34);
+    #ifdef  DEBUG
+  Serial.println(tempC34);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  35  temperature  is:    ");
+    #endif
+  tempC35  =  sensors.getTempC(Probe35);
+    #ifdef  DEBUG
+  Serial.println(tempC35);
+  Serial.println();
+    #endif
+ 
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  36  temperature  is:    ");
+    #endif
+  tempC36  =  sensors.getTempC(Probe36);
+    #ifdef  DEBUG
+  Serial.println(tempC36);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  37  temperature  is:    ");
+    #endif
+  tempC37  =  sensors.getTempC(Probe37);
+    #ifdef  DEBUG
+  Serial.println(tempC37);
+  Serial.println();
+    #endif
+ 
+        #ifdef  DEBUG
+   Serial.print("Probe  38  temperature  is:    ");
+       #endif
+    tempC38=sensors.getTempC(Probe38);
+        #ifdef  DEBUG
+   Serial.println(tempC38);
+   Serial.println();
+         #endif 
+
+    #ifdef  DEBUG
+  Serial.print("Probe  39  temperature  is:    ");
+    #endif
+  tempC39  =  sensors.getTempC(Probe39);
+    #ifdef  DEBUG
+  Serial.println(tempC39);
+ 
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  40  temperature  is:    ");
+    #endif
+  tempC40  =  sensors.getTempC(Probe40);
+    #ifdef  DEBUG
+  Serial.println(tempC40);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  41  temperature  is:    ");
+    #endif
+  tempC41  =  sensors.getTempC(Probe41);
+    #ifdef  DEBUG
+  Serial.println(tempC41);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  42  temperature  is:    ");
+    #endif
+  tempC42  =  sensors.getTempC(Probe42);
+    #ifdef  DEBUG
+  Serial.println(tempC42);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  43  temperature  is:    ");
+    #endif
+  tempC43  =  sensors.getTempC(Probe43);
+    #ifdef  DEBUG
+  Serial.println(tempC43);
+  Serial.println();
+    #endif
+  
+    #ifdef  DEBUG
+  Serial.print("Probe  44  temperature  is:    ");
+    #endif
+  tempC44  =  sensors.getTempC(Probe44);
+    #ifdef  DEBUG
+  Serial.println(tempC44);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  45  temperature  is:    ");
+    #endif
+  tempC45  =  sensors.getTempC(Probe45);
+    #ifdef  DEBUG
+  Serial.println(tempC45);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  46  temperature  is:    ");
+    #endif
+  tempC46  =  sensors.getTempC(Probe46);
+    #ifdef  DEBUG
+  Serial.println(tempC46);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  47  temperature  is:    ");
+    #endif
+  tempC47  =  sensors.getTempC(Probe047);
+    #ifdef  DEBUG
+  Serial.println(tempC47);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  48  temperature  is:    ");
+    #endif
+  tempC48  =  sensors.getTempC(Probe48);
+    #ifdef  DEBUG
+  Serial.println(tempC48);
+  Serial.println();
+    #endif
+ 
+  //sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  49  temperature  is:    ");
+    #endif
+  tempC49  =  sensors.getTempC(Probe49);
+    #ifdef  DEBUG
+  Serial.println(tempC49);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  50  temperature  is:    ");
+    #endif
+  tempC50  =  sensors.getTempC(Probe50);
+    #ifdef  DEBUG
+  Serial.println(tempC50);
+  Serial.println();
+    #endif
+ 
+        #ifdef  DEBUG
+   Serial.print("Probe  51  temperature  is:    ");
+       #endif
+    tempC51=sensors.getTempC(Probe51);
+        #ifdef  DEBUG
+   Serial.println(tempC51);
+   Serial.println();
+         #endif
+
+    #ifdef  DEBUG
+  Serial.print("Probe  52  temperature  is:    ");
+    #endif
+  tempC52  =  sensors.getTempC(Probe52);
+    #ifdef  DEBUG
+  Serial.println(tempC52);
+ 
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  53  temperature  is:    ");
+    #endif
+  tempC53  =  sensors.getTempC(Probe53);
+    #ifdef  DEBUG
+  Serial.println(tempC53);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  54  temperature  is:    ");
+    #endif
+  tempC54  =  sensors.getTempC(Probe54);
+    #ifdef  DEBUG
+  Serial.println(tempC54);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  55  temperature  is:    ");
+    #endif
+  tempC55  =  sensors.getTempC(Probe55);
+    #ifdef  DEBUG
+  Serial.println(tempC55);
+  Serial.println();
+    #endif
+ 
+ //  sensors.requestTemperatures();
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  56  temperature  is:    ");
+    #endif
+  tempC56  =  sensors.getTempC(Probe56);
+    #ifdef  DEBUG
+  Serial.println(tempC56);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  57  temperature  is:    ");
+    #endif
+  tempC57  =  sensors.getTempC(Probe57);
+    #ifdef  DEBUG
+  Serial.println(tempC57);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  58  temperature  is:    ");
+    #endif
+  tempC58  =  sensors.getTempC(Probe58);
+    #ifdef  DEBUG
+  Serial.println(tempC58);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  59  temperature  is:    ");
+    #endif
+  tempC59  =  sensors.getTempC(Probe59);
+    #ifdef  DEBUG
+  Serial.println(tempC59);
+  Serial.println();
+    #endif
+ 
+    #ifdef  DEBUG
+  Serial.print("Probe  60  temperature  is:    ");
+    #endif
+  tempC60  =  sensors.getTempC(Probe60);
+    #ifdef  DEBUG
+  Serial.println(tempC60);
+  Serial.println();
+    #endif
+ 
+  
+   
+ 
+  temp1=dtostrf(tempC1,4,3,buffer1);
+ 
+  temp2=dtostrf(tempC2,4,3,buffer2);
+ 
+  temp3=dtostrf(tempC3,4,3,buffer3);
+ 
+  temp4=dtostrf(tempC4,4,3,buffer4);
+ 
+  temp5=dtostrf(tempC5,4,3,buffer5);
+ 
+  temp6=dtostrf(tempC6,4,3,buffer6);
+ 
+  temp7=dtostrf(tempC7,4,3,buffer7);
+ 
+  temp8=dtostrf(tempC8,4,3,buffer8);
+ 
+  temp9=dtostrf(tempC9,4,3,buffer9);
+ 
+  temp10=dtostrf(tempC10,4,3,buffer10);
+ 
+  temp11=dtostrf(tempC11,4,3,buffer11);
+ 
+  temp12=dtostrf(tempC12,4,3,buffer12);
+   
+  temp13=dtostrf(tempC13,4,3,buffer13);
+ 
+  temp14=dtostrf(tempC14,4,3,buffer14);
+ 
+  temp15=dtostrf(tempC15,4,3,buffer15);
+ 
+  temp16=dtostrf(tempC16,4,3,buffer16);
+ 
+  temp17=dtostrf(tempC17,4,3,buffer17);
+ 
+  temp18=dtostrf(tempC18,4,3,buffer18);
+ 
+  temp19=dtostrf(tempC19,4,3,buffer19);
+ 
+  temp20=dtostrf(tempC20,4,3,buffer20);
+ 
+  temp21=dtostrf(tempC21,4,3,buffer21);
+ 
+  temp22=dtostrf(tempC22,4,3,buffer10);
+ 
+  temp23=dtostrf(tempC23,4,3,buffer23);
+ 
+  temp24=dtostrf(tempC24,4,3,buffer24);
+
+  temp25=dtostrf(temp25,4,3,buffe25);
+ 
+  temp26=dtostrf(tempC26,4,3,buffer26);
+ 
+  temp27=dtostrf(tempC27,4,3,buffer27);
+ 
+  temp28=dtostrf(tempC28,4,3,buffer28);
+ 
+  temp29=dtostrf(tempC29,4,3,buffer29);
+ 
+  temp30=dtostrf(tempC30,4,3,buffe30);
+ 
+  temp31=dtostrf(tempC31,4,3,buffer31);
+ 
+  temp32=dtostrf(tempC32,4,3,buffer32);
+ 
+  temp33=dtostrf(tempC33,4,3,buffer33);
+ 
+  temp34=dtostrf(tempC34,4,3,buffer34);
+ 
+  temp35=dtostrf(tempC35,4,3,buffer35);
+ 
+  temp36=dtostrf(tempC36,4,3,buffer36);
+    
+  temp37=dtostrf(tempC37,4,3,buffer37);
+ 
+  temp38=dtostrf(tempC38,4,3,buffer38);
+ 
+  temp39=dtostrf(tempC39,4,3,buffer39);
+ 
+  temp40=dtostrf(tempC40,4,3,buffer40);
+ 
+  temp41=dtostrf(tempC41,4,3,buffer41);
+ 
+  temp42=dtostrf(tempC42,4,3,buffer42);
+ 
+  temp43=dtostrf(tempC43,4,3,buffer43);
+ 
+  temp44=dtostrf(tempC44,4,3,buffer44);
+ 
+  temp45=dtostrf(tempC45,4,3,buffer45);
+ 
+  temp46=dtostrf(tempC46,4,3,buffer46);
+ 
+  temp47=dtostrf(tempC47,4,3,buffer47);
+ 
+  temp48=dtostrf(tempC48,4,3,buffer48);
+ 
+  temp49=dtostrf(tempC49,4,3,buffer49);
+ 
+  temp50=dtostrf(tempC50,4,3,buffer50);
+ 
+  temp51=dtostrf(tempC51,4,3,buffer51);
+ 
+  temp52=dtostrf(tempC52,4,3,buffer52);
+ 
+  temp53=dtostrf(tempC53,4,3,buffer53);
+ 
+  temp54=dtostrf(tempC54,4,3,buffer54);
+ 
+  temp55=dtostrf(tempC55,4,3,buffer55);
+ 
+  temp56=dtostrf(tempC56,4,3,buffer56);
+ 
+  temp57=dtostrf(tempC57,4,3,buffer57);
+ 
+  temp58=dtostrf(tempC58,4,3,buffer58);
+ 
+  temp59=dtostrf(tempC59,4,3,buffer59);
+ 
+  temp60=dtostrf(tempC60,4,3,buffer60);
+ 
+   
+ 
+}
+ 
+ 
+ 
+ 
+ 
+void  printTemperature(DeviceAddress  deviceAddress)
+ 
+{
+ 
+ 
+ 
+  float  tempC  =  sensors.getTempC(deviceAddress);
+ 
+ 
+ 
+   if  (tempC  ==  -127.00)  
+ 
+   {
+ 
+   Serial.print("Error  getting  temperature   ");
+ 
+   }  
+ 
+   else
+ 
+   {
+ 
+   Serial.print("C:  ");
+ 
+   Serial.print(tempC);
+ 
+   }
+ 
+}
+ 
+ 
+ 
+void  serialEvent()
+ 
+{
+ 
+  if(Serial.available()>0){
+ 
+    char  var=Serial.read();
+ 
+     switch(var){
+ 
+
+        case  '1':
+ 
+        Serial.print(temp1);
+ 
+        break;
+ 
+        case  '2':
+ 
+        Serial.print(temp2);
+ 
+        break;
+ 
+        case  '3':
+ 
+        Serial.print(temp3);
+ 
+        break;
+ 
+        case  '4':
+ 
+        Serial.print(temp4);
+ 
+        break;
+ 
+        case  '5':
+ 
+        Serial.print(temp5);
+ 
+        break;
+ 
+        case  '6':
+ 
+        Serial.print(temp6);
+ 
+        break;
+ 
+        case  '7':
+ 
+        Serial.print(temp7);
+ 
+        break;
+ 
+        case  '8':
+ 
+        Serial.print(temp8);
+ 
+        break;
+ 
+        case  '9':
+ 
+        Serial.print(temp9);
+ 
+        break;
+ 
+        case  'a':
+ 
+        Serial.print(temp10);
+ 
+        break;
+ 
+        case  'b':
+ 
+        Serial.print(temp11);
+ 
+        break;
+ 
+        case  'c':
+ 
+        Serial.print(temp12);
+ 
+        break;
+         
+        case  'd':
+         
+        Serial.print(temp13);
+         
+        break;
+
+        case  'e':
+ 
+        Serial.print(temp14);
+ 
+        break;
+ 
+        case  'f':
+ 
+        Serial.print(temp15);
+ 
+        break;
+ 
+        case  'g':
+ 
+        Serial.print(temp16);
+ 
+        break;
+ 
+        case  'h':
+ 
+        Serial.print(temp17);
+ 
+        break;
+ 
+        case  'i':
+ 
+        Serial.print(temp18);
+ 
+        break;
+ 
+        case  'j':
+ 
+        Serial.print(temp19);
+ 
+        break;
+ 
+        case  'k':
+ 
+        Serial.print(temp20);
+ 
+        break;
+ 
+        case  'l':
+ 
+        Serial.print(temp21);
+ 
+        break;
+ 
+        case  'm':
+ 
+        Serial.print(temp22);
+ 
+        break;
+ 
+        case  'n':
+ 
+        Serial.print(temp23);
+ 
+        break;
+ 
+        case  'o':
+ 
+        Serial.print(temp24);
+ 
+        break;
+ 
+        case  'p':
+ 
+        Serial.print(temp24´);
+ 
+        break;
+         
+        case  'q':
+         
+        Serial.print(temp26);
+         
+        break;
+
+        case  'r':
+ 
+        Serial.print(temp27);
+ 
+        break;
+ 
+        case  's':
+ 
+        Serial.print(temp28);
+ 
+        break;
+ 
+        case  't':
+ 
+        Serial.print(temp29);
+ 
+        break;
+ 
+        case  'u':
+ 
+        Serial.print(temp30);
+ 
+        break;
+ 
+        case  'v':
+ 
+        Serial.print(temp31);
+ 
+        break;
+ 
+        case  'w':
+ 
+        Serial.print(temp32);
+ 
+        break;
+ 
+        case  'x':
+ 
+        Serial.print(temp33);
+ 
+        break;
+ 
+        case  'y':
+ 
+        Serial.print(temp34);
+ 
+        break;
+ 
+        case  'z':
+ 
+        Serial.print(temp35);
+ 
+        break;
+ 
+        case  'A':
+ 
+        Serial.print(temp36);
+ 
+        break;
+ 
+        case  'B':
+ 
+        Serial.print(temp37);
+ 
+        break;
+ 
+        case  'C':
+ 
+        Serial.print(temp38);
+ 
+        break;
+         
+        case  'D':
+         
+        Serial.print(temp39);
+         
+        break;
+
+        case  'E':
+ 
+        Serial.print(temp40);
+ 
+        break;
+ 
+        case  'F':
+ 
+        Serial.print(temp41);
+ 
+        break;
+ 
+        case  'G':
+ 
+        Serial.print(temp42);
+ 
+        break;
+ 
+        case  'H':
+ 
+        Serial.print(temp43);
+ 
+        break;
+ 
+        case  'I':
+ 
+        Serial.print(temp44);
+ 
+        break;
+ 
+        case  'J':
+ 
+        Serial.print(temp45);
+ 
+        break;
+ 
+        case  'K':
+ 
+        Serial.print(temp46);
+ 
+        break;
+ 
+        case  'L':
+ 
+        Serial.print(temp47);
+ 
+        break;
+ 
+        case  'M':
+ 
+        Serial.print(temp48);
+ 
+        break;
+ 
+        case  'N':
+ 
+        Serial.print(temp49);
+ 
+        break;
+ 
+        case  'O':
+ 
+        Serial.print(temp50);
+ 
+        break;
+ 
+        case  'P':
+ 
+        Serial.print(temp51);
+ 
+        break;
+         
+        case  'Q':
+         
+        Serial.print(temp52);
+         
+        break;
+
+        case  'R':
+ 
+        Serial.print(temp53);
+ 
+        break;
+ 
+        case  'S':
+ 
+        Serial.print(temp54);
+ 
+        break;
+ 
+        case  'T':
+ 
+        Serial.print(temp55);
+ 
+        break;
+ 
+        case  'U':
+ 
+        Serial.print(temp56);
+ 
+        break;
+ 
+        case  'V':
+ 
+        Serial.print(temp57);
+ 
+        break;
+ 
+        case  'W':
+ 
+        Serial.print(temp58);
+ 
+        break;
+ 
+        case  'X':
+ 
+        Serial.print(temp59);
+ 
+        break;
+ 
+        case  'Y':
+ 
+        Serial.print(temp60);
+ 
+        break;
+
+      }  
+}
+}

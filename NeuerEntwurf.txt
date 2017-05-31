@@ -86,12 +86,12 @@ tempC49,  tempC50,  tempC51,  tempC52,  tempC53,  tempC54,  tempC55,  tempC56,  
  
 String  temp1,temp2,temp3,temp4,temp5,temp6,temp7,temp8,temp9,temp10,temp11,temp12,temp13,temp14,temp15,temp16,temp17,temp18,temp19,temp20,temp21,temp22,temp23,
 temp24,temp25,temp26,temp27,temp28,temp29,temp30,temp31,temp32,temp33,temp34,temp35,temp36,temp37,temp38,temp39,temp40,temp41,temp42,temp43,temp44,temp45,
-temp46,temp47,temp148,temp149,temp50,temp51,temp52,temp53,temp54,temp55,temp56,temp57,temp58,temp59,temp60;
+temp46,temp47,temp48,temp49,temp50,temp51,temp52,temp53,temp54,temp55,temp56,temp57,temp58,temp59,temp60;
  
 char  buffer1[10],buffer2[10],buffer3[10],buffer4[10],buffer5[10],buffer6[10],buffer7[10],buffer8[10],buffer9[10],buffer10[10],buffer11[10],buffer12[10],buffer13[10],
- buffe14[10],buffer15[10],buffer16[10],buffer17[10],buffer18[10],buffer19[10],
+ buffer14[10],buffer15[10],buffer16[10],buffer17[10],buffer18[10],buffer19[10],
  buffer20[10],buffer21[10],buffer22[10],buffer23[10],buffer24[10],buffer25[10],buffer26[10],buffer27[10],buffer28[10],buffer29[10],buffer30[10],buffer31[10],
- buffer32[10],buffer33[10],buffer34[10],buffer35[10],buffe36[10],buffer37[10],buffer38[10],buffer39[10],buffer40[10],buffer41[10],buffer42[10],buffer43[10],
+ buffer32[10],buffer33[10],buffer34[10],buffer35[10],buffer36[10],buffer37[10],buffer38[10],buffer39[10],buffer40[10],buffer41[10],buffer42[10],buffer43[10],
  buffer44[10],buffer45[10],buffer46[10],buffer47[10],buffer48[10],buffer49[10],buffer50[10],buffer51[10],buffer52[10],buffer53[10],buffer54[10],buffer55[10],
  buffer56[10],buffer57[10],buffer58[10],buffer59[10],buffer60[10];
  
@@ -826,7 +826,7 @@ void  loop()
     #ifdef  DEBUG
   Serial.print("Probe  47  temperature  is:    ");
     #endif
-  tempC47  =  sensors.getTempC(Probe047);
+  tempC47  =  sensors.getTempC(Probe47);
     #ifdef  DEBUG
   Serial.println(tempC47);
   Serial.println();
@@ -1005,7 +1005,7 @@ void  loop()
  
   temp24=dtostrf(tempC24,4,3,buffer24);
 
-  temp25=dtostrf(temp25,4,3,buffe25);
+  temp25=dtostrf(tempC25,4,3,buffer25);
  
   temp26=dtostrf(tempC26,4,3,buffer26);
  
@@ -1015,7 +1015,7 @@ void  loop()
  
   temp29=dtostrf(tempC29,4,3,buffer29);
  
-  temp30=dtostrf(tempC30,4,3,buffe30);
+  temp30=dtostrf(tempC30,4,3,buffer30);
  
   temp31=dtostrf(tempC31,4,3,buffer31);
  
@@ -1274,7 +1274,7 @@ void  serialEvent()
  
         case  'p':
  
-        Serial.print(temp24´);
+        Serial.print(temp24);
  
         break;
          
